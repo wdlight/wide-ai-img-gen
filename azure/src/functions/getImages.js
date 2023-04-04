@@ -47,13 +47,9 @@ app.http("getImages", {
 
 
         const aName = a.name.split("_").pop().toString().split(",").shift().split('.').shift();
-        const bName = b.name.split("_").pop().toString().split(",").shift().split('.').shift();
-        console.log ( "aName :  >>>>>>>>>>>", aName )
-        console.log ( "bName :  >>>>>>>>>>>", bName )
+        const bName = b.name.split("_").pop().toString().split(",").shift().split('.').shift();        
         return bName - aName;
       });
-
-      console.log ( "sorted ImageURLS :  >>>>>>>>>>>", sortedImageUrls.map( url => url.name.split('_').pop()) )
 
       return { 
         jsonBody: {

@@ -34,7 +34,7 @@ app.http('generateImage', {
 
     //generate current timestamp
     const timestamp = new Date().getTime();
-    const filename = `${prompt.slice(0,10)}_${timestamp}.png`;
+    const filename = `${prompt}_${timestamp}.png`;
 
     const blockBlobClient = containerClient.getBlockBlobClient(filename );
     console.log ( ">>>>>>> blockBlobClient passing filename as :", filename)
