@@ -7,17 +7,16 @@ export async function GET(request: Request) {
       cache: "no-store",
     }
     )
-    .then ( r => {
-      console.log (" ✅✅"+r);
-      return r;
-    })
-    .catch ( e => { 
-      console.log (" ❌❌"+e);
-    } );
+    // .then ( r => {
+    //   console.log (" ✅✅"+r);
+    //   return r;
+    // })
+    // .catch ( e => { 
+    //   console.log (" ❌❌"+e);
+    // } );
 
+  const textData = await response.text();
   
-  const textData = await response?.text();
-  console.log ( "  🌵🌵 🌵 API Called GET.." + textData);
   return new Response(JSON.stringify( textData.trim()), {
     status: 200,
   })
