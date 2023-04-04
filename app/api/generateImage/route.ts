@@ -8,7 +8,9 @@ export async function POST(request: Request) {
 
   console.log ( "  🌵🌵 generate image API Called GET..")
   //const response = await fetch("/api/generateImage",    
-  const response = await fetch("http://127.0.0.1:7071/api/generateImage",    
+  //const response = await fetch("http://127.0.0.1:7071/api/generateImage",    
+  
+  const response = await fetch("https://wide-ai-img-gen2.azurewebsites.net/api/generateimage",    
   
     {
       method: "POST",
@@ -18,14 +20,7 @@ export async function POST(request: Request) {
       body: JSON.stringify( {prompt}),       
     }
     )
-    // .then ( r => {
-    //   console.log (" ✅✅"+r);
-    //   return r;
-    // })
-    // .catch ( e => { 
-    //   console.log (" ❌❌"+e);
-    // } );
-
+    
   
   const textData = await response.text();
   return NextResponse.json( textData);

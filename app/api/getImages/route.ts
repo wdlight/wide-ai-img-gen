@@ -1,5 +1,5 @@
 export async function GET( request: Request){
-  const response = await fetch ('http://127.0.0.1:7071/api/getImages', {
+  const response = await fetch ('https://wide-ai-img-gen2.azurewebsites.net/api/getimages', {
     cache: "no-store",
 });
 
