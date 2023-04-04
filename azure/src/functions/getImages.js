@@ -41,11 +41,19 @@ app.http("getImages", {
 
       const sortedImageUrls = imageUrls.sort( (a,b) => {
         // draw-a-diansour_16261200000.png
-        const aName = a.name.split("_").pop().toString().split(",").shift();
-        const bName = b.name.split("_").pop().toString().split(",").shift();
 
+        // q:from a string, take first part of the split("_") and make it string
+        // a: a.name.split("_").pop().toString()
+
+
+        const aName = a.name.split("_").pop().toString().split(",").shift().split('.').shift();
+        const bName = b.name.split("_").pop().toString().split(",").shift().split('.').shift();
+        console.log ( "aName :  >>>>>>>>>>>", aName )
+        console.log ( "bName :  >>>>>>>>>>>", bName )
         return bName - aName;
       });
+
+      console.log ( "sorted ImageURLS :  >>>>>>>>>>>", sortedImageUrls.map( url => url.name.split('_').pop()) )
 
       return { 
         jsonBody: {
